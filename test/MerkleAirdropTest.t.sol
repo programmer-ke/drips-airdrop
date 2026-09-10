@@ -28,6 +28,9 @@ contract MerkleAirdropTest is Test {
 
     function setUp() public {
         (user, userPrivateKey) = makeAddrAndKey("USER");
+
+        console.logBytes32(bytes32(userPrivateKey));
+
         gasPayer = makeAddr("gasPayer");
 
         deployer = new DeployMerkleAirdrop();
