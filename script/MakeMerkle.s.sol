@@ -87,7 +87,10 @@ contract MakeMerkle is Script, ScriptHelper {
             for (uint256 j = 0; j < types.length; ++j) {
                 if (compareStrings(types[j], "address")) {
                     address value = elements.readAddress(getValuesByIndex(i, j));
-                    // you can't immediately cast straight to 32 bytes as an address is 20 bytes so first cast to uint160 (20 bytes) cast up to uint256 which is 32 bytes and finally to bytes32
+                    // you can't immediately cast straight to 32 bytes
+		    // as an address is 20 bytes so first cast to
+		    // uint160 (20 bytes) cast up to uint256 which is
+		    // 32 bytes and finally to bytes32
                     data[j] = bytes32(uint256(uint160(value)));
                     input[j] = vm.toString(value);
                 } else if (compareStrings(types[j], "uint")) {

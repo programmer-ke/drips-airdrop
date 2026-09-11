@@ -12,7 +12,7 @@ contract ClaimAirdrop is Script {
     bytes32 PROOF_ONE = 0x875631ab70d5c9a1430b5a44e60c2c218f68a62a01a73b2e49d03f130b04b5c9;
     bytes32 PROOF_TWO = 0x0fb85f7b6df160de3a55fbbc3757e1166f70d574c0b5520e22040ad2b88d7a5d;
     bytes32[] proof = [PROOF_ONE, PROOF_TWO];
-    // use cast to get combined signature
+    // Created via `make sign`
     bytes private SIGNATURE =
         hex"82a92fb5d8f8fe65a15f00e4c3d662bb4dcf70d24f6e8bcc858c26a4017a95ff728b70aa938430f7687cfb9cdd20c633877f28dd94ef4a679d46e7ddeb88caa21b";
 
