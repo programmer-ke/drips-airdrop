@@ -29,16 +29,15 @@ contract MerkleAirdropTest is Test {
     function setUp() public {
         (user, userPrivateKey) = makeAddrAndKey("USER");
         console.logBytes32(bytes32(userPrivateKey));
-	// creates the following pair
-	// address: 0xF921F4FA82620d8D2589971798c51aeD0C02c81a
-	// private key: 0x2db9fd3d099848027c2383d0a083396f6c41510d7acfd92adc99b6cffcf31e96
+        // creates the following pair
+        // address: 0xF921F4FA82620d8D2589971798c51aeD0C02c81a
+        // private key: 0x2db9fd3d099848027c2383d0a083396f6c41510d7acfd92adc99b6cffcf31e96
 
         gasPayer = makeAddr("gasPayer");
 
         deployer = new DeployMerkleAirdrop();
         (token, airdrop) = deployer.run();
     }
-
 
     function testUsersCanClaim() public {
         uint256 startingBalance = token.balanceOf(user);
