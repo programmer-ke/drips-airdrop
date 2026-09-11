@@ -2,10 +2,19 @@
 src = "src"
 out = "out"
 libs = ["lib"]
-fs_permissions = [{access = "read-write", path="./script/target"}]
+fs_permissions = [
+	       { access = "read-write", path="./script/target"},
+	       { access = "read", path="./broadcast"},
+       	       { access = "read", path="./reports"},		
+]
 remappings = [
  "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
- "@murky/=lib/murky/"
+ "@murky/=lib/murky/",
+ "foundry-devops/=lib/foundry-devops/"
 ]
+
+[fmt]
+line_length  = 100
+
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
